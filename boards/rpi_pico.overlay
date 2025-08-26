@@ -1,0 +1,51 @@
+
+&adc {
+    status = "okay";
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    channel@2 {
+        reg = <2>;  /* GPIO 28 = ADC channel 2 */
+        zephyr,gain = "ADC_GAIN_1";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+        zephyr,resolution = <12>;
+    };
+};
+&i2c0 {
+    status = "okay";  
+    clock-frequency = <I2C_BITRATE_STANDARD>; 
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-names = "default";
+
+    ssd1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        height = <64>;
+        width = <128>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        prechargep = <0x22>;
+        com-invdir;
+        segment-remap;
+    };
+};
+
+
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            pinmux = <I2C0_SDA_P4>, <I2C0_SCL_P5>;
+            input-enable;
+            input-schmitt-enable;
+        };
+    };
+};
+
+/ {
+    chosen {
+        zephyr,display = &ssd1306;  
+    };
+};

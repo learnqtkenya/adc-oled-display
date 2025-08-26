@@ -1,0 +1,4 @@
+west:
+  command: /home/marcus/zephyrproject/.venv/bin/west build -b rpi_pico -p always
+  topdir: /home/marcus/zephyrproject
+  version: 1.4.0

@@ -1,0 +1,3 @@
+/home/marcus/squared/blogs/01-blog/adc-oled-display/build/bootloader/CMakeFiles/boot_stage2.dir
+/home/marcus/squared/blogs/01-blog/adc-oled-display/build/bootloader/CMakeFiles/edit_cache.dir
+/home/marcus/squared/blogs/01-blog/adc-oled-display/build/bootloader/CMakeFiles/rebuild_cache.dir

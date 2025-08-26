@@ -1,0 +1,62 @@
+cmake:
+  application:
+    configuration-dir: '/home/marcus/squared/blogs/01-blog/adc-oled-display'
+    source-dir: '/home/marcus/squared/blogs/01-blog/adc-oled-display'
+  board:
+    name: 'rpi_pico'
+    path:
+     - '/home/marcus/zephyrproject/zephyr/boards/raspberrypi/rpi_pico'
+    qualifiers: 'rp2040'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - '/home/marcus/zephyrproject/zephyr/dts/bindings'
+    files:
+     - '/home/marcus/zephyrproject/zephyr/boards/raspberrypi/rpi_pico/rpi_pico.dts'
+     - '/home/marcus/squared/blogs/01-blog/adc-oled-display/boards/rpi_pico.overlay'
+    include-dirs:
+     - '/home/marcus/zephyrproject/modules/hal/ambiq/dts'
+     - '/home/marcus/zephyrproject/modules/hal/atmel/include'
+     - '/home/marcus/zephyrproject/modules/hal/bouffalolab/include'
+     - '/home/marcus/zephyrproject/modules/hal/bouffalolab/include/zephyr'
+     - '/home/marcus/zephyrproject/modules/hal/gigadevice/include'
+     - '/home/marcus/zephyrproject/modules/hal/microchip/include'
+     - '/home/marcus/zephyrproject/modules/hal/microchip/dts'
+     - '/home/marcus/zephyrproject/modules/hal/nuvoton/dts'
+     - '/home/marcus/zephyrproject/modules/hal/nxp/dts'
+     - '/home/marcus/zephyrproject/modules/hal/stm32/dts'
+     - '/home/marcus/zephyrproject/modules/hal/ti/dts'
+     - '/home/marcus/squared/blogs/01-blog/adc-oled-display/include'
+     - '/home/marcus/zephyrproject/zephyr/include'
+     - '/home/marcus/zephyrproject/zephyr/include/zephyr'
+     - '/home/marcus/zephyrproject/zephyr/dts/common'
+     - '/home/marcus/zephyrproject/zephyr/dts/vendor'
+     - '/home/marcus/zephyrproject/zephyr/dts/rx'
+     - '/home/marcus/zephyrproject/zephyr/dts/x86'
+     - '/home/marcus/zephyrproject/zephyr/dts/xtensa'
+     - '/home/marcus/zephyrproject/zephyr/dts/sparc'
+     - '/home/marcus/zephyrproject/zephyr/dts/riscv'
+     - '/home/marcus/zephyrproject/zephyr/dts/posix'
+     - '/home/marcus/zephyrproject/zephyr/dts/arm64'
+     - '/home/marcus/zephyrproject/zephyr/dts/arm'
+     - '/home/marcus/zephyrproject/zephyr/dts/arc'
+     - '/home/marcus/zephyrproject/zephyr/dts'
+    user-files:
+     - '/home/marcus/squared/blogs/01-blog/adc-oled-display/boards/rpi_pico.overlay'
+  kconfig:
+    files:
+     - '/home/marcus/zephyrproject/zephyr/boards/raspberrypi/rpi_pico/rpi_pico_defconfig'
+     - '/home/marcus/squared/blogs/01-blog/adc-oled-display/prj.conf'
+    user-files:
+     - '/home/marcus/squared/blogs/01-blog/adc-oled-display/prj.conf'
+  toolchain:
+    name: 'zephyr'
+    path: '/home/marcus/zephyr-sdk-0.17.2'
+  zephyr:
+    version: '4.2.99'
+    zephyr-base: '/home/marcus/zephyrproject/zephyr'
+version: '0.1.0'
+west:
+  command: '/home/marcus/zephyrproject/.venv/bin/west build -b rpi_pico -p always'
+  topdir: '/home/marcus/zephyrproject'
+  version: '1.4.0'
